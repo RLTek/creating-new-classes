@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./index.css" rel="stylesheet">
+    
+</head>
+<body>
+    <!--Lesson content-->
+    <div id="new-class">
+        <!--Intro-->
+        <h1>Creating new instances of a class</h1>
+        <p>Below is an example of creating a new class object using Javascript and creating new instances of that class.</p>
+    
+    <!--Class section-->
+    <div id="user-class">
+    <h3>Lets create a user class to easily create new user objects:</h3>
+    <p>//creates the class to create new users<br>
+        class User {<br>
+                  constructor(name, age){<br>
+                     this._name = name;<br>
+                     this._age = age;<br>
+                    }<br><br>
+                 get name(){<br>
+                 return this._name;<br>
+                }<br>
+                 <br>
+                 get age(){<br>
+                 return this._age;<br>
+                };
+    </p>
+    </div>
+    <!--Creating the user array and a function to push new users section-->
+    <div id="user-array">
+        <h3>Lets also make an array to store our users in and a function to add our new users to it:</h3>
+        <p>//creates an empty array to store users<br>
+            const users = []<br><br>
+         //creates a function to add new users to the user array<br>
+            const addUser = (user) => {<br>
+            users.push(user);<br>
+      }
+            </p>
+        </div>
+    <!--Creating new users and pushing them to the array section-->
+    <div id="user-create">
+        <h3>Now we can create some new users and add them to our users array using our addUser function:</h3>
+    <p>
+        //creates new users using the above class<br>
+        const newUser = new User('Homer Simpson', 34);<br>
+        const newUser1 = new User('Peter Griffin', 30);<br>
+        const newUser2 = new User('Michael Scott', 44);<br>
+        const newUser3 = new User('Hank Hill', 48);<br>
+        <br>
+        //adds users to the users array using the addUser function<br>
+        addUser(newUser);<br>
+        addUser(newUser1);<br>
+        addUser(newUser2);<br>
+        addUser(newUser3);<br>
+
+    </p>
+    </div>
+    <!--Checking to see our users were added section-->
+    <div id="user-log">
+        <h3>We can see that our new users have been added to the users array by logging it to the console:</h3>
+    <p>
+        //logs the users that are in the Users array<br>
+        console.log(users);<br>
+    </p>
+    </div>
+    <!--Select a random user section-->
+    <div id="user-random">
+        <h3>Lets have some fun with the data by creating a way to choose a random user:</h3>
+    <p>
+        //selects a random number based on the number of users in the users array<br>  
+        let randomUser = Math.floor(Math.random() * users.length);<br>
+    </p>
+    </div>
+    <!--User sentence seection-->
+    <div id="user-greet">
+        <h3>Now we can use that random user to complete our sentence introducing that user:</h3>
+    <p>
+        //grabs a random user from the users array and logs a sentence with the user's name and age.<br>
+        console.log(`Hi my name is ${users[randomUser].name} and I am ${users[randomUser].age} years old.`);<br>
+    </p>
+    </div>
+    <!--Interactive section for user-->
+    <div id="trial-area">
+        <div>
+        <button id="random-user-button">Try it out!</button>
+        </div>
+        <p id="user-button-output">See for yourself!</p>
+    </div>
+</div>
+<script src="./script.js"></script>
+</body>
+
+</html>
